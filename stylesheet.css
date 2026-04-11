@@ -1299,3 +1299,45 @@ table[style*="border-spacing:0px 10px"] tbody tr td:last-child {
   border-radius: 14px !important;
   overflow: hidden;
 }
+
+table[style*="border-spacing:0px 10px"] {
+  table-layout: fixed !important;
+  width: 100% !important;
+}
+
+table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:25%"] {
+  width: 25% !important;
+  max-width: 25% !important;
+  box-sizing: border-box;
+}
+
+table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:80%"] {
+  width: 75% !important;
+  max-width: 75% !important;
+  box-sizing: border-box;
+}
+
+table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:25%"] img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:80%"] img {
+  width: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  table[style*="border-spacing:0px 10px"] {
+    table-layout: auto !important;
+  }
+
+  table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:25%"],
+  table[style*="border-spacing:0px 10px"] tbody tr td[style*="width:80%"] {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
