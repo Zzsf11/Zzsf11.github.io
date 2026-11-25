@@ -215,13 +215,14 @@ table { border-collapse: collapse; }
 .music-caption { font-size: 14px; color: #61594b; }
 .music-artist .music-profile-link { grid-column: 2; }
 .recent-music { width: 166px; max-width: 100%; margin: 0; }
-.recent-music figcaption { margin-bottom: 5px; font-size: 14px; }
+:is(.recent-music, .music-preview) figcaption { margin-bottom: 5px; font-size: 14px; }
+.music-preview { width: min(100%, 360px); min-width: 0; margin: 0; }
+.music-preview iframe { display: block; width: 100%; border: 0; border-radius: 10px; }
 .recent-music img { display: block; width: 100%; height: auto; border-radius: 6px; }
 .music-artist-main { font: bold 24px/1.25 Georgia, serif; }
 .music-artist-main span { font: 500 .72em var(--sans); }
 .music-profile-link { display: inline-flex; align-items: center; min-height: 44px; gap: 7px; font-weight: 650; font-size: 14px; color: var(--red); }
-.colophon br { display: none; }
-.colophon p { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 21px 0; margin-top: 22px; border-top: 2px solid var(--ink); color: #575144 !important; }
+.colophon { display: flex; justify-content: flex-end; margin: 22px auto 0; padding: 21px 0; border-top: 2px solid var(--ink); }
 .back-top { color: var(--ink); padding: 6px 0; font-weight: 700; font-size: 14px; }
 @media (max-width: 740px) {
   .masthead nav { min-height: 48px; }

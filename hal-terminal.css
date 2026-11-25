@@ -80,7 +80,9 @@ h2 { margin: 0 0 12px; font: 500 30px/1.14 var(--serif); letter-spacing: -.035em
 .music-now-playing { color: var(--muted); font-size: .8rem; }
 .music-profile-link img { display: block; width: 175px; max-width: 100%; }
 .recent-music { margin: 12px 0 0; width: 155px; max-width: 100%; }
-.recent-music figcaption { color: var(--muted); font-size: .85rem; }
+:is(.recent-music, .music-preview) figcaption { color: var(--muted); font-size: .85rem; }
+.music-preview { width: min(100%, 360px); min-width: 0; margin: 0; }
+.music-preview iframe { display: block; width: 100%; border: 0; border-radius: 10px; }
 .recent-music img { display: block; width: 100%; height: auto; }
 #cinema { scroll-margin-block-start: 24px; }
 
