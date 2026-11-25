@@ -8,134 +8,260 @@
     <meta name="author" content="Shifang Zhao">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/profile_icon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="stylesheet" id="homepage-styles" href="cinema.css">
+    <script>
+      if (new URLSearchParams(location.search).get('theme') === 'hal') {
+        document.documentElement.dataset.theme = 'hal';
+        document.getElementById('homepage-styles').href = 'hal-terminal.css';
+      }
+    </script>
+    <script src="hal-terminal.js" defer></script>
     
   </head>
 
-  <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <body id="top">
+    <a class="skip-link cinema-only" href="#profile">Skip to profile</a>
+    <header class="masthead cinema-only">
+      <nav aria-label="Page sections">
+        <a class="monogram" href="#top" aria-label="Shifang Zhao, back to top">SZ.</a>
+        <div class="chapter-links">
+          <a href="#research">Research</a>
+          <a href="#publications-heading">Publications</a>
+          <a href="#experience">Experience</a>
+          <a href="#about">About</a>
+        </div>
+      </nav>
+    </header>
+    <table class="page" role="presentation" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table role="presentation" class="profile-block" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr style="padding:0px">
               <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Shifang Zhao
+                <p class="name" role="heading" aria-level="1" id="profile" style="text-align: center;">
+                  <span>Shifang</span> <span>Zhao</span>
                 </p>
                 <p>
                   I am currently a research assistant at <a href="https://www.gbu.edu.cn/?lang=en">Great Bay University</a>, supervised by <a href="https://vinthony.github.io/academic/">Prof. Xiaodong Cun</a>.
-                  I am a master's student in the Institute of Information Science at the <a href="http://en.njtu.edu.cn/">Beijing Jiaotong University(BJTU)</a>, supervised by <a href="https://weiyc.github.io/">Prof. Yunchao Wei</a>.
-    Previously, I received the B. Sc. degree in Automation Engineering from <a href="https://english.bjut.edu.cn/">Beijing University of Technology(BJUT)</a> in 2023.
+                  I am a master's student in the Institute of Information Science at the <a href="http://en.njtu.edu.cn/">Beijing Jiaotong University (BJTU)</a>, supervised by <a href="https://weiyc.github.io/">Prof. Yunchao Wei</a>.
+    Previously, I received the B. Sc. degree in Automation Engineering from <a href="https://english.bjut.edu.cn/">Beijing University of Technology (BJUT)</a> in 2023.
                 </p>
-                <p style="text-align:center">
-                  <a href="mailto:shifang.zhao@bjtu.edu.cn">Email</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ&amp;hl=zh-CN">Scholar</a> &nbsp;/&nbsp;
-                  <a href="data/resume_en.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="data/wechat.jpg">Wechat</a> &nbsp;/&nbsp;
+                <p class="contact-links" style="text-align:center">
+                  <a href="mailto:shifang.zhao@bjtu.edu.cn">Email</a> <span aria-hidden="true">&nbsp;/&nbsp;</span>
+                  <a href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ&amp;hl=zh-CN">Scholar</a> <span aria-hidden="true">&nbsp;/&nbsp;</span>
+                  <a href="data/resume_en.pdf">CV</a> <span aria-hidden="true">&nbsp;/&nbsp;</span>
+                  <a href="data/wechat.jpg">Wechat</a> <span aria-hidden="true">&nbsp;/&nbsp;</span>
                   <a href="https://github.com/Zzsf11">GitHub</a>
                 </p>
               </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images/portrait-zsf.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/portrait-zsf.jpg" class="hoverZoomLink"></a>
+              <td class="profile-photo" style="padding:2.5%;width:37%;max-width:37%">
+                <a href="images/portrait-zsf.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="Portrait of Shifang Zhao" src="images/portrait-zsf.jpg" class="hoverZoomLink"></a>
+                <a id="hal-lens" href="#cinema" aria-label="HAL 9000 — read about my favorite film" title="HAL 9000 · My favorite film" hidden><canvas width="96" height="96" aria-hidden="true"></canvas></a>
               </td>
             </tr>
           </tbody></table>
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <div style="background-color:#ffebee;border-left:4px solid #f44336;padding:15px;margin:10px 0;">
-                  <p style="color:#d32f2f;font-size:18px;font-weight:bold;margin:0;text-align:center;">
-                    🎓 I am actively seeking PhD opportunities for Fall 2027! 🎓
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <aside class="notice-band availability" aria-label="PhD availability">
+            <div><p>Seeking PhD opportunities for <strong>Fall 2027</strong></p></div>
+          </aside>
+          <table class="research-section" role="presentation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-                <p class="research-evolution">
-                  <del class="past-interest">I'm interested in Multimodal Large Language Model, Image Generation and AI4Medical. My research is about inspect and understanding the visual information.</del>
-                </p>
-                <p class="inspiration-note">
-                  This was once a passive interest shaped by the trend. After watching <a href="https://www.canva.com/design/DAGp0iRLk9g/8QLkIDov8ez1q6VvO8nnpQ/edit">Saining Xie's talk</a>, I clarified a long-term research direction:
-                </p>
+              <td class="research-copy" style="padding:16px;width:100%;vertical-align:middle">
+                <h2 id="research">Research</h2>
                 <p class="manifesto">Create to inspire creation.</p>
                 <p class="inspiration-note">
                   I currently focus on building agentic systems that help people express ideas through existing tools faster and more clearly. Instead of asking users to master fragmented software stacks, my goal is to let them state intent in natural language and have agents plan, orchestrate, and execute the right toolchain.
                 </p>
+                <details class="research-history">
+                  <summary>How my research interests evolved</summary>
+                  <p class="research-evolution">
+                  <del class="past-interest">I'm interested in Multimodal Large Language Model, Image Generation and AI4Medical. My research is about inspect and understanding the visual information.</del>
+                </p>
+                <p class="inspiration-note">
+                  This was once a passive interest shaped by the trend. After watching <a href="https://www.canva.com/design/DAGp0iRLk9g/8QLkIDov8ez1q6VvO8nnpQ/edit">Saining Xie's talk</a>, I clarified my long-term research direction.
+                </p>
+                </details>
               </td>
             </tr>
           </tbody></table>
           <section class="publication-list" aria-label="Publications">
+            <h2 id="publications-heading">Publications</h2>
+
+    <article class="paper-row paper-card" id="coding4games">
+      <div class="paper-cover paper-teaser">
+        <a href="https://coding4game.github.io/" aria-label="Explore the games and watch the full gameplay demos on the Coding4Games project page">
+          <video muted playsinline loop preload="none" poster="images/teasers/coding4games.webp" aria-hidden="true">
+            <source src="images/teasers/coding4games.mp4" type="video/mp4">
+          </video>
+        </a>
+      </div>
+      <div class="paper-info">
+        <a href="https://coding4game.github.io/">
+          <span class="papertitle">Coding4Games: Can Modern Coding Agents Play Modern Video Games?</span>
+        </a>
+        <p class="paper-authors">
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao</a>,
+          <a class="coauthors" href="https://zhuomo-1.github.io/">Haoyu Wang</a>,
+          <a class="coauthors" href="https://yuyangyin.github.io/">Yuyang Yin</a>,
+          <a class="coauthors" href="https://charliedod.github.io/">Dong Chen</a>,
+          <a class="coauthors" href="https://flow0314.github.io/">Xingyilang Yin</a>,
+          <a class="coauthors" href="https://yunkangtao.github.io/">Yunkang Tao</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=j_yFqlsAAAAJ">Honghao Chen</a>,
+          <a class="coauthors" href="https://wangguangzhi.com/">Guangzhi Wang</a>,
+          <a class="coauthors" href="https://raymondwang987.github.io/">Yiran Wang</a>,
+          <a class="coauthors" href="https://pujunfu.github.io/">Junfu Pu</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=QfKnJ7oAAAAJ">Cheng Cheng</a>,
+          <a class="coauthors" href="https://vinthony.github.io/academic/">Xiaodong Cun</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ">Ying Shan</a>
+        </p>
+        <div class="paper-links">
+          <a class="paper-venue" href="https://arxiv.org/abs/2611.31974"><span class="venue-name">arXiv</span><span class="venue-year">2026</span></a>
+          <a class="paper-resource" href="https://github.com/GVCLab/Coding4Games?tab=readme-ov-file" aria-label="Coding4Games on GitHub">
+            <img src="https://img.shields.io/github/stars/GVCLab/Coding4Games?style=social" alt="Coding4Games GitHub stars">
+          </a>
+          <a class="resource-tag" href="https://coding4game.github.io/">Project Page</a>
+        </div>
+        <p class="paper-description">A benchmark for coding agents that write Python programs to play 15 video games. Each program plays on its own during evaluation.</p>
+      </div>
+    </article>
 
     <article class="paper-row paper-card cutclaw-row">
-      <div class="paper-media" style="--paper-image: url('images/CutClaw.png')">
-        <img src='images/CutClaw.png' class="cutclaw-logo" alt="CutClaw logo">
+      <div class="paper-cover paper-teaser">
+        <a href="https://huggingface.co/papers/2603.29664" aria-label="Watch the full CutClaw video on Hugging Face Daily Papers">
+          <video muted playsinline loop preload="none" poster="images/teasers/cutclaw.webp" aria-hidden="true">
+            <source src="images/teasers/cutclaw.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
       <div class="paper-info cutclaw-info">
          <a href="https://arxiv.org/abs/2603.29664">
           <span class="papertitle">CutClaw: Agentic Hours-Long Video Editing via Music Synchronization</span></a>
-        <p class="paper-authors"><strong class="self-author">Shifang Zhao</strong><span class="coauthors">, Yihan Hu, Ying Shan, Yunchao Wei, Xiaodong Cun</span></p>
-        <p class="paper-venue"><span class="venue-name">arXiv</span><span class="venue-year">2026</span></p>
-        <a class="paper-resource" href="https://github.com/GVCLab/CutClaw">
-          <img src="https://img.shields.io/github/stars/GVCLab/CutClaw?style=social" alt="GitHub stars">
-        </a>
+        <p class="paper-authors">
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=UP2IgWIAAAAJ">Yihan Hu</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ">Ying Shan</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=qL9Csv0AAAAJ">Yunchao Wei</a>,
+          <a class="coauthors" href="https://vinthony.github.io/academic/">Xiaodong Cun</a>
+        </p>
+        <div class="paper-links">
+          <a class="paper-venue" href="https://arxiv.org/abs/2603.29664"><span class="venue-name">arXiv</span><span class="venue-year">2026</span></a>
+          <a class="paper-resource" href="https://github.com/GVCLab/CutClaw" aria-label="CutClaw on GitHub">
+            <img src="https://img.shields.io/github/stars/GVCLab/CutClaw?style=social" alt="CutClaw GitHub stars">
+          </a>
+          <a class="resource-tag" href="https://huggingface.co/papers/2603.29664">Demo Video</a>
+        </div>
         <p class="paper-description">An end-to-end agentic system for turning long-form footage and music into cinematic montages.</p>
       </div>
     </article>
 
 
     <article class="paper-row paper-card">
-      <div class="paper-media" style="--paper-image: url('images/OmniAD.png')">
-        <img class="paper-artwork-light" src='images/OmniAD.png' alt="OmniAD multimodal anomaly reasoning overview">
+      <div class="paper-cover paper-teaser figure-teaser">
+        <a href="https://arxiv.org/html/2505.22039v2#S0.F1" aria-label="OmniAD original figure. OmniAD locates a surface defect, encodes marked patches as coordinates, and uses them to explain the change in texture and color.">
+          <video muted loop playsinline preload="none" poster="images/teasers/omniad.webp" width="720" height="540" aria-hidden="true">
+            <source src="images/teasers/omniad.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
       <div class="paper-info">
-         <a href="https://arxiv.org/pdf/2505.22039">
-          <span class="papertitle">OmniAD: Detect and Understand Industrial Anomaly via Multimodal Reasoning</span></a>
-        <p class="paper-authors"><strong class="self-author">Shifang Zhao</strong><span class="coauthors">, Yiheng Lin, Lu Han, Yao Zhao, Yunchao Wei</span></p>
+         <a href="https://doi.org/10.1145/3767308.3834967">
+          <span class="papertitle">OmniAD: Intrinsic Anomaly Detection and Reasoning via Semantic Anomaly Encoding</span></a>
+        <p class="paper-authors">
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0008-5399-5968">Yiheng Lin</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0002-2448-0072">Yunpeng Huan</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0003-8026-8487">Weizhe Liu</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0005-2812-7980">Lu Han</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=lO5VIncAAAAJ">Yao Zhao</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=qL9Csv0AAAAJ">Yunchao Wei</a>
+        </p>
         <p class="paper-venue"><span class="venue-name">ACMMM</span><span class="venue-year">2026</span></p>
-        <p class="paper-description">An approach for enhancing MLLMs in anomaly detection and understanding by unified perception and reasoning.</p>
+        <p class="paper-description">OmniAD encodes defect locations as text and uses that evidence to explain what is wrong with an industrial product.</p>
       </div>
     </article>
 
     <article class="paper-row paper-card">
-      <div class="paper-media" style="--paper-image: url('images/MIA.png')">
-        <img class="paper-artwork-light" src='images/MIA.png' alt="Class-incremental surgical instrument segmentation method">
+      <div class="paper-cover paper-teaser figure-teaser">
+        <a href="https://discovery.ucl.ac.uk/id/eprint/10212110/1/Hoque_Rethinking%20data%20imbalance%20in%20class%20incremental%20surgical%20instrument%20segmentation.pdf#page=4" aria-label="SurgCSS original figure. SurgCSS makes examples of rare instruments, retrains the segmentation head on a balanced mix, and fuses the two heads.">
+          <video muted loop playsinline preload="none" poster="images/teasers/surgcss.webp" width="720" height="540" aria-hidden="true">
+            <source src="images/teasers/surgcss.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
       <div class="paper-info">
         <a href="https://www.sciencedirect.com/science/article/pii/S1361841525002750">
           <span class="papertitle">Rethinking Data Imbalance in Class Incremental Surgical Instrument Segmentation</span></a>
-        <p class="paper-authors"><strong class="self-author">Shifang Zhao*</strong><span class="coauthors">, Long Bai*, Kun Yuan, Feng Li, Jieming Yu, Wenzhen Donga, Guankun Wang, Mobarakol Islam, Nicolas Padoy, Nassir Navab, Hongliang Ren</span></p>
+        <p class="paper-authors">
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao*</a>,
+          <a class="coauthors" href="https://longbai-cuhk.github.io/">Long Bai*</a>,
+          <a class="coauthors" href="https://flaick.github.io/">Kun Yuan</a>,
+          <a class="coauthors" href="https://www.cs.cit.tum.de/en/camp/members/feng-li/">Feng Li</a>,
+          <a class="coauthors" href="https://irennnne.github.io/">Jieming Yu</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0007-3595-0259">Wenzhen Dong</a>,
+          <a class="coauthors" href="https://gkwang-cuhk.github.io/">Guankun Wang</a>,
+          <a class="coauthors" href="https://mobarakol.github.io/">Mobarakol Islam</a>,
+          <a class="coauthors" href="https://camma.unistra.fr/npadoy">Nicolas Padoy</a>,
+          <a class="coauthors" href="https://www.professoren.tum.de/en/navab-nassir">Nassir Navab</a>,
+          <a class="coauthors" href="https://research.cuhk.edu.hk/en/persons/hongliang-ren/">Hongliang Ren</a>
+        </p>
         <p class="paper-venue"><span class="venue-name">Medical Image Analysis</span><span class="venue-year">2025</span></p>
         <p class="paper-description">A plug-and-play framework for addressing data imbalance in class incremental learning.</p>
       </div>
     </article>
 
-    <article class="paper-row paper-card stateflow-row">
-      <div class="paper-media" style="--paper-image: url('images/StateFlow.jpg')">
-        <img class="stateflow-artwork" src="images/StateFlow.jpg" alt="StateFlow 3D world-state construction, evolution, and access">
+    <article class="paper-row paper-card stateflow-row" id="stateflow">
+      <div class="paper-cover paper-teaser">
+        <a href="https://yuyangyin.github.io/StateFlow/" aria-label="Explore StateFlow demos of 3D scene construction, editing, and camera control">
+          <video muted playsinline loop preload="none" poster="images/teasers/stateflow.webp" width="720" height="540" aria-hidden="true">
+            <source src="images/teasers/stateflow.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
       <div class="paper-info">
         <a href="https://yuyangyin.github.io/StateFlow/">
           <span class="papertitle">StateFlow: Building, Evolving, and Accessing 3D World States for Previsualization</span>
         </a>
-        <p class="paper-authors"><span class="coauthors">Yuyang Yin*, Zixiang Li*, Longxuan Deng*, Hongkai Li, </span><strong class="self-author">Shifang Zhao</strong><span class="coauthors">, Junnan Liu, Weirong Huang, Mengyu Wang, Tianxiao Fu, Yikai Wang, Peng-Shuai Wang, Xiaojie Jin, Yao Zhao, Yunchao Wei</span></p>
+        <p class="paper-authors">
+          <a class="coauthors" href="https://yuyangyin.github.io/">Yuyang Yin*</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0003-4048-7343">Zixiang Li*</a>,
+          <a class="coauthors" href="https://scholar.google.com/scholar?q=author%3A%22Longxuan+Deng%22+%22StateFlow%22" aria-label="Find Longxuan Deng’s StateFlow paper on Google Scholar">Longxuan Deng*</a>,
+          <a class="coauthors" href="https://scholar.google.com/scholar?q=author%3A%22Hongkai+Li%22+%22StateFlow%22" aria-label="Find Hongkai Li’s StateFlow paper on Google Scholar">Hongkai Li</a>,
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao</a>,
+          <a class="coauthors" href="https://scholar.google.com/scholar?q=author%3A%22Junnan+Liu%22+%22StateFlow%22" aria-label="Find Junnan Liu’s StateFlow paper on Google Scholar">Junnan Liu</a>,
+          <a class="coauthors" href="https://scholar.google.com/scholar?q=author%3A%22Weirong+Huang%22+%22StateFlow%22" aria-label="Find Weirong Huang’s StateFlow paper on Google Scholar">Weirong Huang</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0003-3104-7725">Mengyu Wang</a>,
+          <a class="coauthors" href="https://scholar.google.com/scholar?q=author%3A%22Tianxiao+Fu%22+%22StateFlow%22" aria-label="Find Tianxiao Fu’s StateFlow paper on Google Scholar">Tianxiao Fu</a>,
+          <a class="coauthors" href="https://yikaiw.github.io/">Yikai Wang</a>,
+          <a class="coauthors" href="https://wang-ps.github.io/">Peng-Shuai Wang</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=OEZ816YAAAAJ">Xiaojie Jin</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=lO5VIncAAAAJ">Yao Zhao</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=qL9Csv0AAAAJ">Yunchao Wei</a>
+        </p>
         <p class="paper-venue"><span class="venue-name">Preprint</span><span class="venue-year">2026</span></p>
         <p class="paper-description">A state-centric framework for building, evolving, and accessing persistent, editable 3D worlds for previsualization.</p>
       </div>
     </article>
 
-    <article class="paper-row paper-card">
-      <div class="paper-media" style="--paper-image: url('images/AlignGen.png')">
-        <img class="paper-artwork-light" src='images/AlignGen.png' alt="AlignGen personalized image generation examples">
+    <article class="paper-row paper-card" id="aligngen">
+      <div class="paper-cover paper-teaser">
+        <a href="https://arxiv.org/pdf/2505.21911" aria-label="Read how AlignGen combines a reference subject and a text prompt for personalized image generation">
+          <video muted playsinline loop preload="none" poster="images/teasers/aligngen.webp" width="720" height="540" aria-hidden="true">
+            <source src="images/teasers/aligngen.mp4" type="video/mp4">
+          </video>
+        </a>
       </div>
       <div class="paper-info">
          <a href="https://arxiv.org/pdf/2505.21911">
           <span class="papertitle">AlignGen: Boosting Personalized Image Generation with Cross-Modality Prior Alignment</span></a>
-        <p class="paper-authors"><span class="coauthors">Yiheng Lin*, </span><strong class="self-author">Shifang Zhao*</strong><span class="coauthors">, Ting Liu, Xiaochao Qu, Luoqi Liu, Yao Zhao, Yunchao Wei</span></p>
+        <p class="paper-authors">
+          <a class="coauthors" href="https://orcid.org/0009-0008-5399-5968">Yiheng Lin*</a>,
+          <a class="self-author" href="https://scholar.google.com/citations?user=cO2oKnoAAAAJ">Shifang Zhao*</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0008-7988-5935">Ting Liu</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0002-0247-2637">Xiaochao Qu</a>,
+          <a class="coauthors" href="https://orcid.org/0009-0002-6607-4072">Luoqi Liu</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=lO5VIncAAAAJ">Yao Zhao</a>,
+          <a class="coauthors" href="https://scholar.google.com/citations?user=qL9Csv0AAAAJ">Yunchao Wei</a>
+        </p>
         <p class="paper-venue"><span class="venue-name">arXiv</span><span class="venue-year">2025</span></p>
         <p class="paper-description">Bridging the gap between the textual and visual priors for robust zero-shot personalized image generation.</p>
       </div>
@@ -144,14 +270,14 @@
           </section>
 
           
-					<table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+					<table class="section-heading" role="presentation" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
             <tr>
               <td>
-                <h2>Experience</h2>
+                <h2 id="experience">Experience</h2>
               </td>
             </tr>
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table class="experience-list" role="presentation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             
            
             <tr>
@@ -198,14 +324,14 @@
 
           </tbody></table>
 
-          <table style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
+          <table class="section-heading" role="presentation" style="width:100%; margin:0 auto; border:0; border-spacing:0; padding:16px;"><tbody>
             <tr>
               <td>
-                <h2>About Me More</h2>
+                <h2 id="about">Beyond research</h2>
               </td>
             </tr>
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table class="personal-list" role="presentation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
             <tr>
               <td align="center" style="padding:16px;width:20%;vertical-align:middle">
@@ -223,7 +349,7 @@
             <tr>
               <td align="center" style="padding:16px;width:20%;vertical-align:middle">
 						     <div class="colored-box" style="background-color: #fcb97d;">
-							 <h2>Cinema</h2>
+							 <h2 id="cinema">Cinema</h2>
 							 </div>
               </td>
                 <td style="padding:8px;width:80%;vertical-align:middle">
@@ -239,31 +365,30 @@
 							 </div>
               </td>
                 <td style="padding:8px;width:80%;vertical-align:middle">
-                <div class="music-block music-split">
-                  <div class="music-left">
+                <div class="music-block">
+                  <div class="music-artist">
                     <p class="music-caption">My favorite artist</p>
-                    <p class="music-artist-main">LIU SEN(刘森)</p>
+                    <p class="music-artist-main">Liu Sen <span lang="zh">刘森</span></p>
+                    <a class="music-profile-link" href="https://music.apple.com/tw/artist/%E5%8A%89%E6%A3%AE/1502984832" target="_blank" rel="noopener noreferrer">Listen on Apple Music <span aria-hidden="true">↗</span></a>
                   </div>
-                  <div class="music-right">
-                    <span class="music-now-playing">Now Playing</span>
-                    <a href="https://music.apple.com/tw/artist/%E5%8A%89%E6%A3%AE/1502984832" target="_blank" rel="noopener noreferrer" class="music-profile-link music-profile-link-compact">
-                      <img src="https://music-profile.rayriffy.com/theme/dark.svg?uid=000619.de469d4094f54ac6b6622ef0db64b78e.0533" alt="Apple Music GitHub profile">
-                    </a>
-                  </div>
+                  <figure class="recent-music">
+                    <figcaption>Recently played</figcaption>
+                    <img src="https://music-profile.rayriffy.com/theme/dark.svg?uid=000619.de469d4094f54ac6b6622ef0db64b78e.0533" width="345" height="534" loading="lazy" alt="My most recently played track on Apple Music">
+                  </figure>
                 </div>
-                <br>
               </td>
             </tr>
 
           
             
           </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <table class="colophon" role="presentation" style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
             <tr>
               <td style="padding:0px">
                 <br>
                 <p style="text-align:center;font-size:12px;color:#94a3b8;letter-spacing:0.3px;">
                   Thanks to GPT-5.3-Codex
+                  <a href="#top" class="back-top cinema-only">Back to top <span aria-hidden="true">↑</span></a>
                 </p>
               </td>
             </tr>
@@ -271,5 +396,7 @@
         </td>
       </tr>
     </table>
+    <script src="cinema-nav.js" defer></script>
+    <script src="paper-teasers.js" defer></script>
   </body>
 </html>
