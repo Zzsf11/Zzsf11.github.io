@@ -69,12 +69,12 @@ h2 { margin: 0 0 12px; font: 500 30px/1.14 var(--serif); letter-spacing: -.035em
 .paper-venue, .paper-resource, .resource-tag { display: inline-flex; align-items: center; vertical-align: middle; margin: 5px 6px 0 0; font-size: .8rem; }
 .paper-venue { gap: .4em; }
 .paper-resource img { max-height: 19px; }
-table[style*="padding:16px;"] { padding: 26px 0 4px !important; }
-td:has(> .colored-box) { text-align: left; padding: 9px 12px 9px 0 !important; }
-.colored-box { background: transparent !important; }
-.colored-box h2 { font: 600 .9rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: 0; margin: 0; }
-td:has(> .colored-box) + td { font-size: .91rem; }
-.experience-detail { display: flex; align-items: center; gap: 10px; }
+.bio-section { padding-block: 24px; border-top: 1px solid var(--line); }
+.bio-row { display: grid; grid-template-columns: minmax(110px, 23%) 1fr; gap: 14px; align-items: baseline; padding-block: 10px; }
+.bio-row > p { margin: 0; font-size: .91rem; }
+.bio-label { display: flex; align-items: center; gap: 8px; }
+.bio-label h3 { margin: 0; font: 600 .9rem/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+@media (max-width: 620px) { .bio-row { grid-template-columns: 1fr; gap: 5px; } }
 .experience-logo { width: 28px; height: 28px; object-fit: contain; flex: none; }
 .music-caption, .music-artist-main, .music-now-playing { margin: 0; }
 .music-now-playing { color: var(--muted); font-size: .8rem; }

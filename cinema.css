@@ -125,7 +125,7 @@ table { border-collapse: collapse; }
   vertical-align: -.04em;
 }
 
-.research-section, .section-heading, .experience-list, .personal-list, .colophon { width: var(--inner) !important; }
+.research-section, .colophon { width: var(--inner) !important; }
 .research-copy {
   padding: clamp(38px, 5vw, 72px) 0 !important; display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.1fr);
   column-gap: clamp(30px, 6vw, 90px); row-gap: 12px; align-items: start;
@@ -143,7 +143,7 @@ table { border-collapse: collapse; }
   background: var(--black); color: var(--cream);
   padding: clamp(40px, 5vw, 70px) max(var(--gutter), calc((100% - 1120px)/2));
 }
-.publication-list > h2, .section-heading h2 {
+.publication-list > h2, .bio-section > h2 {
   text-transform: uppercase; font: italic clamp(39px, 5vw, 71px)/1 var(--display); letter-spacing: -.015em;
 }
 .publication-list > h2 { margin-bottom: 20px; color: var(--gold); }
@@ -184,15 +184,27 @@ table { border-collapse: collapse; }
 }
 .paper-description { margin: 14px 0 0; color: #e6decd; font-size: 16px; line-height: 1.55; }
 
-.section-heading { padding: clamp(36px, 5vw, 65px) 0 18px !important; }
-.section-heading h2 { color: var(--red); }
-.experience-list tr, .personal-list tr { border-top: 1px solid #b8ae99; }
-:is(.experience-list, .personal-list) td { padding: 17px 0 !important; }
-:is(.experience-list, .personal-list) td:first-child { width: 22% !important; padding-right: 16px !important; text-align: left; }
-.colored-box { background: none !important; }
-.colored-box h2 { font: italic clamp(23px, 2.6vw, 35px)/1.1 Georgia, serif; }
-.experience-detail, .music-block { display: flex; align-items: center; gap: 18px; }
-.experience-logo { width: 50px; height: 44px; object-fit: contain; flex: none; }
+.bio-section {
+  width: var(--inner);
+  margin-inline: auto;
+  padding-block: clamp(32px, 4vw, 56px);
+}
+.bio-section + .bio-section { border-top: 3px solid var(--ink); }
+.bio-section > h2 { margin-bottom: 16px; color: var(--red); }
+.bio-row {
+  display: grid;
+  grid-template-columns: clamp(150px, 21%, 245px) minmax(0, 1fr);
+  align-items: baseline;
+  gap: clamp(16px, 3vw, 44px);
+  padding-block: 18px;
+}
+.bio-row:has(.experience-logo) { align-items: center; }
+.bio-row + .bio-row { border-top: 1px solid #d4c8b0; }
+.bio-label { display: flex; align-items: center; gap: 14px; }
+.bio-label h3 { margin: 0; font: italic clamp(21px, 2.1vw, 29px)/1.2 Georgia, serif; }
+.experience-logo { width: 38px; height: 38px; object-fit: contain; flex: none; }
+.bio-row > p { max-width: 70ch; }
+.music-block { display: flex; align-items: flex-start; }
 .music-block { flex-wrap: wrap; justify-content: flex-start; gap: 16px clamp(24px, 5vw, 72px); }
 .music-artist { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 14px; }
 .music-artist::before {
@@ -208,7 +220,7 @@ table { border-collapse: collapse; }
 .music-artist-main { font: bold 24px/1.25 Georgia, serif; }
 .music-artist-main span { font: 500 .72em var(--sans); }
 .music-profile-link { display: inline-flex; align-items: center; min-height: 44px; gap: 7px; font-weight: 650; font-size: 14px; color: var(--red); }
-.personal-list br, .colophon br { display: none; }
+.colophon br { display: none; }
 .colophon p { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 21px 0; margin-top: 22px; border-top: 2px solid var(--ink); color: #575144 !important; }
 .back-top { color: var(--ink); padding: 6px 0; font-weight: 700; font-size: 14px; }
 @media (max-width: 740px) {
@@ -230,9 +242,9 @@ table { border-collapse: collapse; }
   .research-history { margin-top: 10px; }
   .paper-card { grid-template-columns: 1fr; gap: 17px; }
   .paper-authors { font-size: 14px; }
-  .experience-logo { width: 33px; height: 35px; }
-  .experience-detail { gap: 9px; }
-  .personal-list td:first-child { width: 30% !important; }
+  .bio-row { grid-template-columns: 1fr; gap: 8px; }
+  .experience-logo { width: 28px; height: 28px; }
+  .bio-label { gap: 10px; }
 }
 @media (max-width: 360px) {
   .music-artist { display: block; }
