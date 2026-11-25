@@ -204,24 +204,13 @@ table { border-collapse: collapse; }
 .bio-label h3 { margin: 0; font: italic clamp(21px, 2.1vw, 29px)/1.2 Georgia, serif; }
 .experience-logo { width: 38px; height: 38px; object-fit: contain; flex: none; }
 .bio-row > p { max-width: 70ch; }
-.music-block { display: flex; align-items: flex-start; }
-.music-block { flex-wrap: wrap; justify-content: flex-start; gap: 16px clamp(24px, 5vw, 72px); }
-.music-artist { display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 14px; }
-.music-artist::before {
-  content: ""; grid-row: span 2; width: 50px; aspect-ratio: 1; border-radius: 50%;
-  background: radial-gradient(circle, var(--cream) 0 2px, var(--red) 2px 9px, transparent 10px),
-    repeating-radial-gradient(circle, #252521 0 3px, #44423a 3px 4px);
-}
-.music-caption { font-size: 14px; color: #61594b; }
-.music-artist .music-profile-link { grid-column: 2; }
+.music-block { min-width: 0; }
+.music-block > p { margin: 0 0 12px; }
 .recent-music { width: 166px; max-width: 100%; margin: 0; }
-:is(.recent-music, .music-preview) figcaption { margin-bottom: 5px; font-size: 14px; }
+.recent-music figcaption { margin-bottom: 5px; font-size: 14px; }
 .music-preview { width: min(100%, 360px); min-width: 0; margin: 0; }
 .music-preview iframe { display: block; width: 100%; border: 0; border-radius: 10px; }
 .recent-music img { display: block; width: 100%; height: auto; border-radius: 6px; }
-.music-artist-main { font: bold 24px/1.25 Georgia, serif; }
-.music-artist-main span { font: 500 .72em var(--sans); }
-.music-profile-link { display: inline-flex; align-items: center; min-height: 44px; gap: 7px; font-weight: 650; font-size: 14px; color: var(--red); }
 .colophon { display: flex; justify-content: flex-end; margin: 22px auto 0; padding: 21px 0; border-top: 2px solid var(--ink); }
 .back-top { color: var(--ink); padding: 6px 0; font-weight: 700; font-size: 14px; }
 @media (max-width: 740px) {
@@ -248,8 +237,6 @@ table { border-collapse: collapse; }
   .bio-label { gap: 10px; }
 }
 @media (max-width: 360px) {
-  .music-artist { display: block; }
-  .music-artist::before { display: none; }
   .chapter-links { gap: 9px; }
   .chapter-links a { font-size: 12px; }
   .monogram { font-size: 22px; }
